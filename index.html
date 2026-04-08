@@ -1,21 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Biglietto Treno - Bootstrap</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+        <!-- Bootstrap 5.3 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Calcola Biglietto</h1>
-    <input type="number" id="km" placeholder="Quanti Km devi percorrere?">
-    <input type="number" id="eta" placeholder="Quanti anni hai?">
-    <button id="calcola">Calcola</button>
-
-    <div id="risultato"></div>
-
+    <div class="container my-5">
+        <!-- FORM SOPRA -->
+        <div class="card shadow-lg border-0 rounded-4 p-4 mb-5 biglietto-form">
+            <h1 class="text-center mb-4 fw-bold text-danger fs-2">
+                CALCOLA IL PREZZO DEL TUO BIGLIETTO
+            </h1>
+            
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <input type="text" class="form-control form-control-lg" id="nome" placeholder="Nome Cognome">
+                </div>
+                <div class="col-md-4">
+                    <input type="number" class="form-control form-control-lg" id="km" placeholder="Km da percorrere" min="1">
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select form-select-lg" id="eta">
+                        <option value="maggiore">Maggiore Età</option>
+                        <option value="minore">Minorenne</option>
+                        <option value="over65">Over 65</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <button id="genera" class="btn btn-warning btn-lg px-5 py-3 fw-bold shadow-sm me-3">
+                        GENERA
+                    </button>
+                    <button class="btn btn-outline-secondary btn-lg px-5 py-3">
+                        ANNULLA
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- BIGLIETTO SOTTO -->
+        <div class="card shadow-lg border-0 rounded-4 p-4 biglietto-section" id="biglietto">
+            <h2 class="text-center mb-4 fw-bold text-white fs-3 titolo-biglietto">IL TUO BIGLIETTO</h2>
+            
+            <div class="card-body bg-light rounded-3 p-4">
+                <div class="row fw-bold text-uppercase mb-3 header-biglietto">
+                    <div class="col-3 text-danger">DETTAGLIO PASSEGGERO</div>
+                    <div class="col text-center">Offerta</div>
+                    <div class="col text-center">Carrozza</div>
+                    <div class="col text-center">Codice CP</div>
+                    <div class="col text-center">Costo Biglietto</div>
+                </div>
+                
+                <div class="row align-items-center">
+                    <div class="col-3 fw-bold" id="nomePasseggero">NOME PASSEGGERO</div>
+                    <div class="col text-center">
+                        <span id="offerta" class="badge bg-secondary px-3 py-2">Biglietto Standard</span>
+                    </div>
+                    <div class="col text-center fw-bold" id="carrozza">5</div>
+                    <div class="col text-center fw-bold" id="codiceCP">9211</div>
+                    <div class="col text-center fw-bold fs-5 text-success" id="risultato">2.10€</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./script.js"></script>
 </body>
 

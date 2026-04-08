@@ -8,35 +8,37 @@
 //variabile prezzo costante
 const prezzo = 0.21;
 
-//variabile km variabili
-let km = parseFloat(prompt ('quanti km devi percorrere'));
+function calcolaPrezzoBiglietto() {
 
-//calcolo prezzo biglietto
-let prezzoBiglietto = prezzo * km;
+    //variabile km
+    let km = parseFloat(prompt ('quanti km devi percorrere'));
 
-console.log(prezzoBiglietto);
+    //calcolo prezzo
+    let prezzoBiglietto = prezzo * km;
 
-//variabile età
-const eta = parseInt(prompt ('inserisci la tua età'));
+    //variabile età
+    const eta = parseInt(prompt ('inserisci la tua età'));
 
+    //calcolo tariffe scontate
+    
+    if (eta < 18) {
+        prezzoBiglietto = prezzoBiglietto * 0.8;
+        console.log('applicato sconto minorenni');
+    
+    } else if (eta > 65){
+        prezzoBiglietto = prezzoBiglietto * 0.6;
+        console.log('applicato sconto over 65');
+    
+    } else {
+        console.log('nessuno sconto applicato');
+    
+    }
 
-//calcolo tariffe scontate
+    //limitare decimali prezzo a 2 
+    let prezzoFinale = prezzoBiglietto.toFixed(2)
 
-if (eta < 18) {
-    prezzoBiglietto = prezzoBiglietto * 0.8;
-    console.log('applicato sconto minorenni');
-
-} else if (eta > 65){
-    prezzoBiglietto = prezzoBiglietto * 0.6;
-    console.log('applicato sconto over 65');
-
-} else {
-    console.log('nessuno sconto applicato');
-
+    risultato.innerText = `Prezzo biglietto: €${prezzoFinale}`;
 }
 
+bottone.addEventListener('click', prezzoBiglietto);
 
-//limitare decimali prezzo a 2 
-let prezzoFinale = prezzoBiglietto.toFixed(2)
-
-console.log(prezzoFinale);
