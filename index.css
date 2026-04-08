@@ -1,0 +1,38 @@
+.biglietto-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.biglietto-section {
+    max-width: 700px;
+    margin: 0 auto;
+    display: none;
+}
+
+.titolo-biglietto {
+    background-color: #dc3545 !important;
+    padding: 20px 0 !important;
+    border-radius: 10px;
+    margin: -20px -30px 20px -30px;
+}
+
+.header-biglietto span {
+    font-size: 0.9em;
+}
+
+.btn-warning {
+    background-color: #FFD700 !important;
+    border-color: #FFD700 !important;
+    color: #000 !important;
+}
+
+.btn-warning:hover {
+    background-color: #e6c200 !important;
+    border-color: #e6c200 !important;
+    color: #000 !important;
+}
+
+#offerta {
+    font-size: 0.85em;
+    min-width: 120px;
+}
